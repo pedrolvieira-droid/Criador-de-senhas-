@@ -1,0 +1,9 @@
+nome= input ('Qual é seu primeiro nome?')
+idade= input ('Qual é sua idade?')
+peso= input ('Qual é seu peso?')
+altura= input ('Qual sua Altura?')
+parte_nome= nome[0:2]
+fim_nome= nome[2:]
+senha = parte_nome+ idade+ peso+ altura+ fim_nome
+
+print('Sua senha é', senha)
