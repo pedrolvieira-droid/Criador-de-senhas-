@@ -1,0 +1,13 @@
+import random
+nome= input ('Qual é seu primeiro nome?')
+idade= input ('Qual é sua idade?')
+peso= input ('Qual é seu peso?')
+altura= input ('Qual sua Altura?')
+simbolos = ["!", "@", "#", "$", "&", "*"]
+
+parte_nome= nome[0:2]
+fim_nome= nome[2:]
+simbolo_escolhido = random.choice(simbolos)
+senha = parte_nome+ idade+ simbolo_escolhido+ peso+ altura+ fim_nome
+
+print('Sua senha gerada foi',senha)
