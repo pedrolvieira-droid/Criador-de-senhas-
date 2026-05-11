@@ -1,0 +1,25 @@
+import random 
+
+# 1. Coleta de Informações (Entradas)
+nome = input("Digite seu nome: ")
+nascimento = input("Digite o ano de nascimento (Ex: 1995): ")
+peso = input("Digite seu peso: ")
+nome_cao = input("Digite o nome do seu cachorro: ")
+
+# 2. Extração de Fragmentos (Slicing - Pedaços das infos)
+# Pegamos as duas primeiras letras do nome e os dois últimos dígitos do ano
+parte_nome = nome[0:2] 
+parte_ano = nascimento[2:4]
+
+# 3. Adicionando o Elemento Surpresa (Aleatoriedade)
+# Lista de símbolos para aumentar a segurança
+simbolos = ["!", "@", "#", "$", "&", "*"]
+simbolo_escolhido = random.choice(simbolos) # Escolhe um símbolo ao acaso
+
+# 4. Montagem da Senha (Concatenação)
+# Misturamos os traços originais com o peso e o símbolo
+senha_gerada = f"{parte_nome}{simbolo_escolhido}{peso}{parte_ano}{nome_cao}"
+
+# 5. Saída
+print("\n--- GERADOR DE SENHA ---")
+print(f"Sua nova senha baseada em traços pessoais é: {senha_gerada}")
