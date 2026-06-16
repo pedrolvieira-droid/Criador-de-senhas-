@@ -1,0 +1,51 @@
+import random
+
+# Coleta de dados
+nome = input('Qual é seu primeiro nome? ')
+idade = input('Qual é sua idade? ')
+peso = input('Qual é seu peso? ')
+altura = input('Qual sua Altura? ')
+
+# Processamento básico
+parte_nome = nome[0:2]
+fim_nome = nome[2:]
+
+# Lista de símbolos disponíveis
+simbolos = ["!", "@", "#", "$", "&", "*", "-", "+", "_"]
+
+# Mostra os símbolos para o usuário escolher
+print(f"\n SÍMBOLOS DISPONÍVEIS: {simbolos}")
+simbolo_escolhido = input("Escolha um símbolo para sua senha: ").strip()
+
+# Verifica se o símbolo escolhido está na lista
+while simbolo_escolhido not in simbolos:
+    print(" Símbolo inválido! Escolha um dos disponíveis.")
+    simbolo_escolhido = input("Escolha um símbolo: ").strip()
+
+# Pergunta sobre símbolo adicional
+print("\n Deseja adicionar mais um símbolo no final da senha?")
+resposta = input("> [S/N]: ").strip().upper()
+
+# Gera a senha base (sem adicional ainda)
+senha_base = parte_nome + idade + simbolo_escolhido + peso + altura + fim_nome
+
+if resposta == "S":
+    print(f"\n SÍMBOLOS DISPONÍVEIS: {simbolos}")
+    simbolo_adicional = input("Escolha o símbolo adicional: ").strip()
+    
+    # Verifica se o símbolo adicional é válido
+    while simbolo_adicional not in simbolos:
+        print(" Símbolo inválido! Escolha um dos disponíveis.")
+        simbolo_adicional = input("Escolha o símbolo adicional: ").strip()
+    
+    # Gera a senha COM o símbolo adicional
+    senha = senha_base + simbolo_adicional
+    print(f"\n✅ Senha gerada COM símbolo adicional: {senha}")
+else:
+    # Gera a senha SEM o símbolo adicional
+    senha = senha_base
+    print(f"\n✅ Senha gerada: {senha}")
+
+# Exibe informações finais
+print(f"\n🔒 SUA SENHA: {senha}")
+print(f"📏 Tamanho: {len(senha)} caracteres")
